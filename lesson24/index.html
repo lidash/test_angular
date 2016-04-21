@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+	
+	<script type="text/javascript" src="main.js"></script>
+	
+</head>
+<body>
+	<a href="#/">Home</a>
+	<a href="#/posts">Posts</a>
+	<ng-view></ng-view>
+
+	<div ng-controller="pathCtrl">
+		Current path is: {{currentPath}} 
+	</div>
+	
+</body>
+</html>

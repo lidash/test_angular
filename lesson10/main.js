@@ -1,0 +1,39 @@
+var app = angular.module('app', []);
+
+app.directive('fooBar', function(){
+	// Runs during compile
+	var bookmarks = [
+	{
+		id: 1,
+		name: 'AngularJS'
+	},
+	{
+		id: 2,
+		name: 'EmberJS'
+	},
+	{
+		id: 3,
+		name: 'ReactJS'
+	}
+	];
+
+	return {
+		// name: '',
+		// priority: 1,
+		// terminal: true,
+		// scope: {}, // {} = isolate, true = child, false/undefined = no change
+		// controller: function($scope, $element, $attrs, $transclude) {},
+		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
+		// restrict: 'EACM', // E = Element, A = Attribute, C = Class, M = Comment
+		 template: "<div ng-repeat='bookmark in myBookmarks'>{{bookmark.name}}</div>",
+		// templateUrl: '',
+		// replace: true,
+		// transclude: true,
+		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
+		link: function(scope,element, attrs) {
+			console.log('fooBar');
+			scope.name = "Sasha";
+			scope.myBookmarks = bookmarks;
+		}
+	};
+});
